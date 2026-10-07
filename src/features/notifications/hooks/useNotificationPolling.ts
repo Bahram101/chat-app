@@ -43,7 +43,7 @@ async function watchNotifications(
         onMessage(message);
       }
       await notificationsService.deleteNotification(notification.receiptId);
-    } catch (error) {
+    } catch {
       if (signal.aborted) {
         return;
       }

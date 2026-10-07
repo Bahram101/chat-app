@@ -1,4 +1,4 @@
-import { ArrowLeft, SendHorizontal } from "lucide-react";
+import { SendHorizontal } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { useSendMessage } from "@/features/messages/hooks/useSendMessage";
@@ -8,11 +8,10 @@ import type { Chat, Message } from "../chats.types";
 
 type Props = {
   chat: Chat;
-  onBack: () => void;
   onMessageSent: (message: Message) => void;
 };
 
-export function ChatWindow({ chat, onBack, onMessageSent }: Props) {
+export function ChatWindow({ chat, onMessageSent }: Props) {
   const [text, setText] = useState("");
   const sendMessage = useSendMessage();
   const bottomRef = useRef<HTMLDivElement>(null);

@@ -53,7 +53,6 @@ export function ChatPage() {
           <ChatWindow
             key={activeChat.chatId}
             chat={activeChat}
-            onBack={() => setActiveChatId(null)}
             onMessageSent={(message) => addMessage(activeChat.chatId, message)}
           />
         )}
