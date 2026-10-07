@@ -1,5 +1,11 @@
+import { ChatPage } from "@/pages/ChatPage";
+import { LoginPage } from "@/pages/LoginPage";
+import { useAuth } from "@/providers/AuthProvider";
+
 function App() {
-  return <div>Hello</div>;
+  const { isAuthenticated } = useAuth();
+
+  return isAuthenticated ? <ChatPage /> : <LoginPage />;
 }
 
 export default App;
